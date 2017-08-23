@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h1>授業内容</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Content</th>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @questions.each do |question| %>
+      <tr>
+        <td><%= question.title %></td>
+        <td><%= question.finished ? :text %></td>
+        <td><%= question.name %></td>
+        <td><%= link_to 'Show', question %></td>
+        
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to '新たに投稿する。', new_question_path %>
